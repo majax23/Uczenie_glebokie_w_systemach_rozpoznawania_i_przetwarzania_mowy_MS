@@ -25,7 +25,7 @@ Dodatkowo zbadano wpływ parametrów okna (N_FFT oraz HOP_LENGTH) na rozdzielczo
 * **Implementacja:** Funkcje `log_mel()` oraz `mfcc()` wykorzystujące odpowiednie metody z biblioteki `librosa`.
   Następnie w pętli przetworzono pliki `samogłoska.wav`, `wyraz.wav` i `zdanie.wav`, wyświetlając dla każdego z nich przebieg fali, spektrogram i wykres MFCC.
   Przetestowano wpływ parametrów na pliku `wyraz.wav`, generując dwa spektrogramy: jeden z priorytetem rozdzielczości czasowej (`n_fft=256`, `hop_length=80`), drugi częstotliwościowej (`n_fft=1024`, `hop_length=320`).
-* **[Notatnik z kodem](WKLIEC LINK DO COALBA)**
+* **[Notatnik z kodem](https://github.com/majax23/Uczenie_glebokie_w_systemach_rozpoznawania_i_przetwarzania_mowy_MS/blob/main/LAB1_Zadanie_Maja_Swiniarska_mowa.ipynb)**
 
 
 ## 3. Wyniki
