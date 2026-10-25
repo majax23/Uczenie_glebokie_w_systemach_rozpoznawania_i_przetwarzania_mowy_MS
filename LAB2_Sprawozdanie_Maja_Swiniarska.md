@@ -46,6 +46,7 @@ EKSPERYMENT A  (GRU, okno 30)
 | GRU, h=16 | 929 | 0,00374 ± 0,00002 | 6,6 |
 | GRU, h=32 | 3393 | 0,00376 ± 0,00001 | 8,2 |
 | GRU, h=64 | 12929 | 0,00375 ± 0,00008 | 13,8 |
+
 <img width="889" height="390" alt="image" src="https://github.com/user-attachments/assets/5e330a01-8936-4918-91b5-f03ef9a8cc19" />
 
 
@@ -60,6 +61,7 @@ EKSPERYMENT B (GRU, h=32)
 | GRU, okno 30 | 3393 | 0,00376 ± 0,00001 | 8,2 |
 | GRU, okno 60 | 3393 | **0,00343 ± 0,00021** | 14,3 |
 | GRU, okno 120 | 3393 | 0,00344 ± 0,00019 | 28,2 |
+
 <img width="889" height="390" alt="image" src="https://github.com/user-attachments/assets/1930d520-44df-4b17-ab51-63ced8bea6e0" />
 
 
@@ -74,10 +76,12 @@ EKSPERYMENT C (h=32)
 | RNN, okno 120 | 1153 | 0,00400 ± 0,00001 | 10,1 |
 | LSTM, okno 120 | 4513 | 0,00375 ± 0,00013 | 18,2 |
 | GRU, okno 120 | 3393 | **0,00344 ± 0,00019** | 28,2 |
+
 <img width="889" height="390" alt="image" src="https://github.com/user-attachments/assets/1b143f5e-b7f4-4b04-ab7f-b6f3a4a512ab" />
 
 
 Najlepsza konfiguracja: GRU, h=32, okno 60 (0,00343 ± 0,00021; 54% błędu heurystyki).
+
 <img width="790" height="370" alt="image" src="https://github.com/user-attachments/assets/e98b5810-6477-42dc-8a29-b24d93499e2c" />
 
 <img width="847" height="336" alt="image" src="https://github.com/user-attachments/assets/405f1895-33db-484e-a500-3883bf72ff93" />
