@@ -26,7 +26,7 @@ Warunki: epoki=20, lr=1e-2, batch=64, ziarna 0/1/2; wynik = średnia ± odch. st
 
 Eksperymenty: 
 
-A — hidden=8/16/32/64 (GRU, okno 30); 
+A - hidden=8/16/32/64 (GRU, okno 30); 
 
 B — OKNO=10/30/60/120 (GRU, h=32); C — RNN/LSTM/GRU (h=32, okna 10 i 120).
 
@@ -50,6 +50,7 @@ EKSPERYMENT A  (GRU, okno 30)
 <img width="889" height="390" alt="image" src="https://github.com/user-attachments/assets/5e330a01-8936-4918-91b5-f03ef9a8cc19" />
 
 
+
 EKSPERYMENT B (GRU, h=32)
 | Konfiguracja | Parametry | Test MSE (śr. ± odch.) | Czas [s] |
 |---|---|---|---|
@@ -65,6 +66,7 @@ EKSPERYMENT B (GRU, h=32)
 <img width="889" height="390" alt="image" src="https://github.com/user-attachments/assets/1930d520-44df-4b17-ab51-63ced8bea6e0" />
 
 
+
 EKSPERYMENT C (h=32)
 | Konfiguracja | Parametry | Test MSE (śr. ± odch.) | Czas [s] |
 |---|---|---|---|
@@ -78,6 +80,7 @@ EKSPERYMENT C (h=32)
 | GRU, okno 120 | 3393 | **0,00344 ± 0,00019** | 28,2 |
 
 <img width="889" height="390" alt="image" src="https://github.com/user-attachments/assets/1b143f5e-b7f4-4b04-ab7f-b6f3a4a512ab" />
+
 
 
 Najlepsza konfiguracja: GRU, h=32, okno 60 (0,00343 ± 0,00021; 54% błędu heurystyki).
