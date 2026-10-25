@@ -36,6 +36,8 @@ Hipoteza B: okno 10 będzie najgorsze (bliskie heurystyce), najlepsze 30–60, o
 
 ## 3. Wyniki
 
+**Punkt odniesienia (RNN, h=32, okno 30, 30 epok):** test MSE = 0,00377 (ostatnia epoka), 0,00386 (średnia z 5 ostatnich). Heurystyka „ostatnia próbka”: 0,00631.
+
 EKSPERYMENT A  (GRU, okno 30)
 | Konfiguracja | Parametry | Test MSE (śr. ± odch.) | Czas [s] |
 |---|---|---|---|
@@ -95,16 +97,17 @@ Diagnostyka: test/trening 0,98–1,03 (brak przeuczenia), brak nan; krzywe posza
 Ograniczenia: konfiguracje porównywane na zbiorze testowym (brak walidacyjnego); różne okna → nieco inne zbiory testowe; 3 ziarna; jeden syntetyczny sygnał.
 
 ## 5. Wnioski
-1.Większa liczba jednostek nie poprawia wyniku: dla h=8–64 MSE ≈ 0,0037–0,0038 (różnice w granicach rozrzutu), a czas rośnie.
+1. Większa liczba jednostek nie poprawia wyniku: dla h=8–64 MSE ≈ 0,0037–0,0038 (różnice w granicach rozrzutu), a czas rośnie.
 
-2.Najlepsze okno to 60 (MSE 0,00343); okno 120 daje to samo przy dwukrotnie dłuższym treningu, okna 10 i 30 są gorsze. Prawdopodobnie okno 60 zawiera już dość informacji o fazie sygnału.
+2. Najlepsze okno to 60 (MSE 0,00343); okno 120 daje to samo przy dwukrotnie dłuższym treningu, okna 10 i 30 są gorsze. Prawdopodobnie okno 60 zawiera już dość informacji o fazie sygnału.
 
-3.RNN i komórki bramkowane reagują różnie: wydłużenie okna 10→120 daje RNN ok. 4%, LSTM ok. 10%, GRU ok. 17% poprawy. RNN się nie pogorszył.
-4.Wszystkie modele są wyraźnie lepsze od heurystyki (54–66% jej MSE), ale nie osiągają granicy szumu 0,0025.
+3. RNN i komórki bramkowane reagują różnie: wydłużenie okna 10→120 daje RNN ok. 4%, LSTM ok. 10%, GRU ok. 17% poprawy. RNN się nie pogorszył.
 
-5.Nie zaobserwowano przeuczenia ani poważnej niestabilności, tylko poszarpane krzywe.
+4. Wszystkie modele są wyraźnie lepsze od heurystyki (54–66% jej MSE), ale nie osiągają granicy szumu 0,0025.
 
-6.Hipotezy: A potwierdzona w części (plateau, brak przeuczenia; poprawy 8→32 nie było). B w większości (okno 10 najgorsze, 120 bez zysku, czas rośnie), ale okno 10 nie było bliskie heurystyce, a okno 60 było wyraźnie lepsze od 30.
+5. Nie zaobserwowano przeuczenia (test/trening 0,98–1,03) ani poważnej niestabilności, tylko poszarpane krzywe. Wyraźnego niedouczenia też nie widać (na krzywej najlepszej konfiguracji strata przestaje spadać przed końcem 20 epok), choć błąd pozostaje powyżej poziomu szumu 0,0025.
+
+6. Hipotezy: A potwierdzona w części (plateau, brak przeuczenia; poprawy 8→32 nie było). B w większości (okno 10 najgorsze, 120 bez zysku, czas rośnie), ale okno 10 nie było bliskie heurystyce, a okno 60 było wyraźnie lepsze od 30.
 
 
 ---
