@@ -2,7 +2,7 @@
 
 **Przedmiot:** Uczenie głębokie w systemach rozpoznawania i przetwarzania mowy
 
-**Zajęcia nr / temat:** 7 / Projekt generacyjny, cz. 2 – budowa i uczenie Char-RNN
+**Zajęcia nr / temat:** 7. Projekt generacyjny, cz. 2 – budowa i uczenie Char-RNN
 
 **Autor / grupa:** Maja Świniarska GL.04
 
@@ -74,7 +74,8 @@ Porównano trzy warianty: `GRU-1` (1 warstwa GRU), `LSTM-1` (1 warstwa LSTM) ora
 | czas @ 8800 [s] | 42,2 | 44,1 | 59,1 |
 | średni czas kroku [ms] | 4,79 | 5,01 | 6,72 |
 
-![Pilotaż: walidacyjna perplexity](pilotaz.png)
+<img width="790" height="340" alt="image" src="https://github.com/user-attachments/assets/2016c7db-06ec-47d3-ae6d-4e0b0a4ace61" />
+
 
 *Rys. 1. Przebieg walidacyjnej perplexity w pilotażu dla trzech wariantów architektury (do kroku 8800).*
 
@@ -97,7 +98,8 @@ Budżet maksymalny ustalono na 10 epok ($135\,860$ kroków). Trening trwał **5,
 | 32 000 | 2,36 | $8{,}79 \cdot 10^{-4}$ | 1,2953 | 3,6520 | 1,4595 | 4,3039 | |
 | 38 000 | 2,80 | $8{,}31 \cdot 10^{-4}$ | 1,2867 | 3,6210 | 1,4592 | 4,3023 | early stopping |
 
-![Krzywe uczenia GRU-2](krzywe_uczenia.png)
+<img width="989" height="390" alt="image" src="https://github.com/user-attachments/assets/07ac9b21-aca4-47dd-b47a-d0588bc3d9fc" />
+
 
 *Rys. 2. Strata treningowa i walidacyjna (cross-entropy) oraz harmonogram współczynnika uczenia podczas treningu `GRU-2`.*
 
@@ -151,4 +153,3 @@ Zwiększenie `SEKW` z 20 do 80 obniżyło walidacyjną PPL o **3,5%** (z $4{,}30
 2. Harmonogram *warmup + cosine decay* oraz *early stopping* pozwoliły osiągnąć minimum straty walidacyjnej w kroku 24 000 ($\text{PPL} = 4{,}2961$) i zatrzymać trening w fazie plateau bez przeuczenia modelu.
 3. Model dobrze generalizuje na odłożony zbiór testowy ($\text{PPL} = 4{,}3531$), a jego poprawny zapis i odtworzenie w świeżej sesji potwierdziły gotowość checkpointu `char_rnn.pt` (`char_rnn_best.pt`) do dalszych eksperymentów z generowaniem tekstu na laboratorium 8.
 
-Zapisane artefakty: checkpointy (`char_rnn.pt`, `char_rnn_best.pt`, `char_rnn_last.pt`, `char_rnn_ep03.pt`), tabele wyników (`pilotaz_tabela.csv`, `pilotaz_pomiary.csv`, `historia_treningu.csv`, `sekw_porownanie.csv`) oraz wykresy (`pilotaz.png`, `krzywe_uczenia.png`).
